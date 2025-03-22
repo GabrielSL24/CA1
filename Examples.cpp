@@ -56,16 +56,16 @@ class Solution2 {
 //Practice 3
 class Solution3 {
     public:
-        int removeElement(vector<int>& nums, int val) {
-            for (int i = 0; i < nums.size(); i++) {
-                if (nums[i] == val) {
-                    nums.erase(remove(nums.begin(), nums.end(), val), nums.end());
-                    int k = nums.size();
-                    return k;
-                }
+    int removeElement(vector<int>& nums, int val) {
+        int k = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
             }
-            return 0;
         }
+        return k;
+    }
     };
 
 //Practice 4
